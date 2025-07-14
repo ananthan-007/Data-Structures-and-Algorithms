@@ -51,6 +51,3 @@ Depth-First Search is another graph traversal algorithm that explores as far as 
 The C implementation of DFS is found in the `dfs.c` file. It uses either recursion or an explicit stack to traverse the graph.
 
 ---
-
-## 📂 Folder Structure
-
