@@ -2,7 +2,7 @@
  * --------------------------------------------------- *
  *  Project   : Linear_search                          *
  *  Author    : Ananthakrishnan K V                    *
- *  Version   : v1.0                                   *
+ *  Version   : 1.0                                   *
  *  Language  : C                                      *
  *  Created   : 13-07-2025                             *
  *  Updated   : 13-07-2025                             *
