@@ -24,7 +24,7 @@ Whether you're preparing for coding interviews, competitive programming, or acad
 
 ---
 
-## 🛠 Language
+## 🛠 Language 
 
 All code is written in **C**, structured for readability, and includes inline comments for understanding logic step-by-step.
 
