@@ -112,6 +112,13 @@ void display(int matrix[][3],int size){
     }
     printf("\n");
 }
+void readmatrix(int m[][n],int n){
+    for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                scanf("%d",&m[i][j]);
+            }
+        }
+}
 
 int main(){
     int sizeA,sizeB;
@@ -119,18 +126,10 @@ int main(){
     scanf("%d",&n);
     int matrixA[n][n];
     int matrixB[n][n];
-    printf("\nEnter the elements of matrix 1\n: ");
-    for(int i=0;i<n;i++){
-        for(int j=0;j<n;j++){
-            scanf("%d",&matrixA[i][j]);
-        }
-    }
-    printf("\nEnter the elements of matrix 2\n: ");
-    for(int i=0;i<n;i++){
-        for(int j=0;j<n;j++){
-            scanf("%d",&matrixB[i][j]);
-        }
-    }
+    printf("\nEnter the elements of matrix 1: \n");
+    readmatrix(matrixA,n);
+    printf("\nEnter the elements of matrix 2: \n");
+    readmatrix(matrixB,n);
     int compactA[n+1][3];
     int compactB[n+1][3];
     int result[n+1][3];
