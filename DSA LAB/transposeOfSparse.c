@@ -12,24 +12,25 @@
  * --------------------------------------------------- *
  *            Let code flow like poetry! 🚀            *
  *******************************************************/
-#include <stdio.h>
 
-int toCompact(int matrix[][5],int compactMatrix[][3],int *size){
+#include <stdio.h>
+int n;
+int toCompact(int matrix[][n],int compactMatrix[][3],int *size){
     *size=0;
-    for(int i=0;i<5;i++){
-        for(int j=0;j<5;j++){
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
             if(matrix[i][j]!=0){
                 (*size)++;
             }
         }
     }
 
-    compactMatrix[0][0]=5;
-    compactMatrix[0][1]=5;
+    compactMatrix[0][0]=n;
+    compactMatrix[0][1]=n;
     compactMatrix[0][2]=*size;
     int k=1;
-    for(int i=0;i<5;i++){
-        for(int j=0;j<5;j++){
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
             if(matrix[i][j]!=0){
                 compactMatrix[k][0]=i;
                 compactMatrix[k][1]=j;
@@ -114,24 +115,25 @@ void display(int matrix[][3],int size){
 
 int main(){
     int sizeA,sizeB;
-    int matrixA[5][5] = {
-        { 0, 0, 0, 0, 5 },
-        { 0, 0, 8, 0, 0 },
-        { 0, 0, 0, 0, 0 },
-        { 0, 7, 0, 0, 0 },
-        { 3, 0, 0, 6, 0 }
-    };
-
-    int matrixB[5][5] = {
-    { 0, 0, 0, 2, 0 },
-    { 0, 0, 0, 0, 0 },
-    { 0, 4, 0, 0, 0 },
-    { 0, 0, 0, 0, 9 },
-    { 1, 0, 0, 0, 0 }
-    };
-    int compactA[26][3];
-    int compactB[26][3];
-    int result[26][3];
+    printf("Enter the size of two matrices: ");
+    scanf("%d",&n);
+    int matrixA[n][n];
+    int matrixB[n][n];
+    printf("\nEnter the elements of matrix 1\n: ");
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            scanf("%d",&matrixA[i][j]);
+        }
+    }
+    printf("\nEnter the elements of matrix 2\n: ");
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            scanf("%d",&matrixB[i][j]);
+        }
+    }
+    int compactA[n+1][3];
+    int compactB[n+1][3];
+    int result[n+1][3];
     int transposeMatrix[26][3];
 
     toCompact(matrixA,compactA,&sizeA);
