@@ -34,10 +34,14 @@ void addTwoPoly(polynomial poly1[],int n1,polynomial poly2[],int n2,polynomial r
     *n3 = k;
 }
 
-void displayPoly(polynomial poly[],int n){
-    for(int i=0; i<n; i++){
-        printf("(%d , %d)",poly[i].expo,poly[i].coeff);
+void displayPolynomial(polynomial poly[], int n) {           
+    for (int i = 0; i < n; i++) {
+        printf("%dx^%d", poly[i].coeff, poly[i].expo);
+        if (i != n - 1) {     
+            printf(" + ");
+        }
     }
+    printf("\n");
 }
 
 
@@ -66,7 +70,7 @@ int main(){
 
     addTwoPoly(poly1,n1,poly2,n2,result,&n3);
 
-    displayPoly(result,n3);
+    displayPolynomial(result,n3);
 
     return 0;
 }
