@@ -9,22 +9,22 @@ struct node{
 
 struct node* insert(struct node* head,int coeff, int expo){
     struct node* temp;
-    struct node* new = malloc(sizeof(struct node));
-    new->coeff = coeff;
-    new->expo = expo;
-    new->link = NULL;
+    struct node* newP = malloc(sizeof(struct node));
+    newP->coeff = coeff;
+    newP->expo = expo;
+    newP->link = NULL;
 
     if(head == NULL || expo > head->expo){
-        new->link=head;
-        head=new;
+        newP->link=head;
+        head=newP;
     }
     else{
         temp = head;
-        while(temp!=NULL && temp->link->expo >= expo){
+        while(temp->link!=NULL && temp->link->expo >= expo){
             temp = temp->link;
         }
-        new->link=temp->link;
-        temp->link= new;
+        newP->link=temp->link;
+        temp->link= newP;
     }
 
     return head;
@@ -77,7 +77,7 @@ struct node* addPoly(struct node* head1 ,struct node* head2){
     return head3;
 }
 
-struct node* print(struct node* head){
+void print(struct node* head){
     
     if(head==NULL){
         printf("NO POLYNOMIAL");
@@ -87,7 +87,11 @@ struct node* print(struct node* head){
         while(temp!=NULL){
             printf("%dX^%d",temp->coeff,temp->expo);
             temp=temp->link;
+            if (temp != NULL){
+                printf(" + ");
+            }
         }
+        printf("\n");
     }
 }
     
@@ -104,5 +108,9 @@ int main(){
     head2 = create(head2);
 
     result = addPoly(head1, head2);
-    
+
+    printf("Sum of Polynomials: ");
+    print(result);
+
+    return 0;
 }
