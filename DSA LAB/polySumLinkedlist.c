@@ -104,8 +104,11 @@ int main(){
     printf("Enter the Polynomials\n");
 
     head1 = create(head1);
-
+    printf("\nPolynomial 1: ");
+    print(head1);
     head2 = create(head2);
+    printf("\nPolynomial 2: ");
+    print(head2);
 
     result = addPoly(head1, head2);
 
